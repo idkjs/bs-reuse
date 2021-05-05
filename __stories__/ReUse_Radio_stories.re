@@ -10,7 +10,7 @@ module Styles = {
 
 let _module = [%bs.raw "module"];
 
-storiesOf("Elements | Radio", _module)
+let _=storiesOf("Elements | Radio", _module)
 ->(
     add("default", () =>
       <div>

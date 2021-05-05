@@ -1,19 +1,28 @@
 /* Component_test.re */
 
 open Jest;
-open Expect;
+// open Expect;
 open JestDom;
 open ReactTestingLibrary;
 
 describe("getByText", () => {
   test("Component renders", () => {
-    let btn = <ReUse_Button> {ReasonReact.string("Hello Button")} </ReUse_Button>;
+    let btn =
+      <ReUse_Button> {ReasonReact.string("Hello Button")} </ReUse_Button>;
 
-    btn |> render(_) |> getByText(~matcher=`Str("Hello Button"), _) |> expect |> toBeInTheDocument;
+    btn
+    |> render(_)
+    |> getByText(~matcher=`Str("Hello Button"), _)
+    |> expect
+    |> toBeInTheDocument;
   });
 
   test("Component renders", () => {
-    let btn = <ReUse_Button type_="button" variant=`text> {ReasonReact.string("Hello Button")} </ReUse_Button>;
+    open Expect;
+    let btn =
+      <ReUse_Button type_="button" variant=`text>
+        {ReasonReact.string("Hello Button")}
+      </ReUse_Button>;
 
     btn |> render(_) |> container |> expect |> toMatchSnapshot;
   });
@@ -21,7 +30,9 @@ describe("getByText", () => {
   test("Component renders disabled", () => {
     let onClick = [%raw {|jest.fn()|}];
     let btn =
-      <ReUse_Button type_="button" disabled=true onClick> {ReasonReact.string("Hello Button")} </ReUse_Button>
+      <ReUse_Button type_="button" disabled=true onClick>
+        {ReasonReact.string("Hello Button")}
+      </ReUse_Button>
       |> render(_);
 
     FireEvent.click(btn |> getByText(~matcher=`Str("Hello Button"), _));
@@ -34,7 +45,10 @@ describe("getByText", () => {
   test("Component onClick prop", () => {
     let onClick = [%raw {|jest.fn()|}];
     let btn =
-      <ReUse_Button type_="button" onClick> {ReasonReact.string("Hello Button")} </ReUse_Button> |> render(_);
+      <ReUse_Button type_="button" onClick>
+        {ReasonReact.string("Hello Button")}
+      </ReUse_Button>
+      |> render(_);
 
     FireEvent.click(btn |> getByText(~matcher=`Str("Hello Button"), _));
 

@@ -27,8 +27,8 @@ let fontFamily = `custom("'Roboto', sans-serif;");
 
 let shadow = {
   elevation: [|
-    Shadow.box(~y=px(3), ~blur=px(5), rgba(0, 0, 0, 0.3)),
-    Shadow.box(~y=px(5), ~blur=px(8), rgba(0, 0, 0, 0.3)),
+    Shadow.box(~y=px(3), ~blur=px(5), rgba(0, 0, 0, `num(0.3))),
+    Shadow.box(~y=px(5), ~blur=px(8), rgba(0, 0, 0, `num(0.3))),
   |],
 };
 

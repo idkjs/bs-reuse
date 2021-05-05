@@ -10,7 +10,7 @@ module Styles = {
 
 let _module = [%bs.raw "module"];
 
-storiesOf("Elements | Text Field", _module)
+let _ =storiesOf("Elements | Text Field", _module)
 ->(
     add("default", () =>
       <div>

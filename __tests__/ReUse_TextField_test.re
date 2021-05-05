@@ -1,7 +1,7 @@
 /* Component_test.re */
 
 open Jest;
-open Expect;
+// open Expect;
 open JestDom;
 open ReactTestingLibrary;
 

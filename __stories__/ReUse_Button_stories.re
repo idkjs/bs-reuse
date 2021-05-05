@@ -10,7 +10,7 @@ module Styles = {
 };
 
 let _module = [%bs.raw "module"];
-
+let _ =
 storiesOf("Elements | Button", _module)
 ->(
     add("default", () =>

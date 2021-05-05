@@ -78,9 +78,9 @@ let make = (~value, ~className="", ~label, ~onClick=?, ~disabled=false, ~checked
     | None => ()
     };
 
-  <label className={Cn.make([defaultStyles.root, defaultStyles.checked->Cn.ifTrue(checked), className])}>
+  <label className={Cn.fromList([defaultStyles.root, defaultStyles.checked->Cn.on(checked), className])}>
     <span>
-      <input className={Cn.make([defaultStyles.input])} type_="radio" disabled onClick=handleClick value />
+      <input className={Cn.fromList([defaultStyles.input])} type_="radio" disabled onClick=handleClick value />
       <span className={defaultStyles.radio} />
     </span>
     <span> label->React.string </span>

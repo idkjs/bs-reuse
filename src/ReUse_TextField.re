@@ -148,7 +148,7 @@ let make =
 
   let renderLabel =
     switch (label) {
-    | Some(label) => <span className={Cn.make([defaultStyles.label])}> label->React.string </span>
+    | Some(label) => <span className={Cn.fromList([defaultStyles.label])}> label->React.string </span>
     | None => ""->React.string
     };
 
@@ -161,11 +161,11 @@ let make =
   <div className>
     <label
       className={
-        Cn.make([
-          defaultStyles.expand->Cn.ifTrue(focus),
+        Cn.fromList([
+          defaultStyles.expand->Cn.on(focus),
           labelStyle,
-          defaultStyles.invalid->Cn.ifTrue(!valid),
-          defaultStyles.filled->Cn.ifTrue(filled),
+          defaultStyles.invalid->Cn.on(!valid),
+          defaultStyles.filled->Cn.on(filled),
           defaultStyles.wrapper,
           variantStyle,
         ])
@@ -176,9 +176,9 @@ let make =
         placeholder
         onFocus={_ => setFocus(_ => true)}
         onBlur={_ => setFocus(_ => false)}
-        className={Cn.make([defaultStyles.input])}
+        className={Cn.fromList([defaultStyles.input])}
       />
-      <span className={Cn.make([defaultStyles.labelWrapper])}> renderLabel </span>
+      <span className={Cn.fromList([defaultStyles.labelWrapper])}> renderLabel </span>
     </label>
   </div>;
 };

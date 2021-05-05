@@ -63,7 +63,7 @@ let make =
     };
 
   <button
-    className={Cn.make([defaultStyles.root, variantStyle, defaultStyles.elevated->Cn.ifTrue(elevated), className])}
+    className={Cn.fromList([defaultStyles.root, variantStyle, defaultStyles.elevated->Cn.on(elevated), className])}
     type_
     disabled
     ?onClick>

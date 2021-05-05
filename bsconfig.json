@@ -39,7 +39,7 @@
     "bs-react-testing-library",
     "@glennsl/bs-jest",
     "bs-jest-dom"
-    
+
   ],
-  "refmt": 3
+  "warnings": {"number": "-44-27"}
 }
